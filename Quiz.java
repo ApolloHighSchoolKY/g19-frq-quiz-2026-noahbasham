@@ -5,7 +5,9 @@ public static String scrambleWord(String word){
     //create a new string to be the new word
     String newWord = "";
     //if the current letter AND the next letter meet the criteria
-    if(word.substring(i,i+1).equals("a") && !word.substring(i+1,i+2).equals("a"))
+    if(word.equals(""))
+      return newWord; //since it can be an empty string, eliminate all bounds errors before they even happen
+    else if(word.substring(i,i+1).equals("A") && !word.substring(i+1,i+2).equals("A")) //all letters are uppercase
       newWord = newWord + word.substring(i+1,i+2) + word.substring(i,i+1);
     else //there's nothing to worry about
       newWord = newWord + word.substring(i,i+1);
